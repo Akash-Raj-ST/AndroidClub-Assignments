@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, FlatList,Image} from 'react-native';
 import { Divider } from 'react-native-elements';
 
+import AgencyText from "../AgencyText"
+
 export default function Transactions() {
 
     var sum=0;
@@ -57,14 +59,16 @@ function Header(props){
                 flexDirection:'row',
                 justifyContent:'space-between',
                 paddingHorizontal:20,
-                marginVertical:5
+                marginVertical:5,
+
             }}
         >
             <Text style={{color:"grey",}}>Today</Text>
-            <Text 
-                style={{fontWeight:"bold",fontSize:18}}
+            <AgencyText 
+                styles={{fontSize:22}}
+                weight="bold"
             >
-            {props.total>0?"+":"-"} ₹ {props.total>0?props.total:props.total*-1}</Text>
+            {props.total>0?"+":"-"} ₹ {props.total>0?props.total:props.total*-1}</AgencyText>
         </View>
     )
 }
@@ -76,7 +80,8 @@ function Item(props){
             style={{
                 flexDirection:'row',
                 alignItems:'center',
-                marginHorizontal:10,
+                width:"100%",
+                paddingHorizontal:20                
             }}
         >
             <View
@@ -113,12 +118,12 @@ function Item(props){
                 </View>
             </View>
 
-            <Text
-                    style={{
-                        fontWeight:'bold',
-                        fontSize:17,
-                    }}
-            >{props.data.amount>0?"+":"-"} ₹ {props.data.amount>0?props.data.amount:props.data.amount*-1}</Text>
+            <AgencyText
+                styles={{
+                    fontSize:17,
+                }}
+                weight='bold'
+            >{props.data.amount>0?"+":"-"} ₹ {props.data.amount>0?props.data.amount:props.data.amount*-1}</AgencyText>
         </View>
     )
 }

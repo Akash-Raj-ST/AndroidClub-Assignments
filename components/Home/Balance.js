@@ -1,11 +1,13 @@
 import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
 
+import AgencyText from '../AgencyText';
+
 export default function Balance(props) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>BALANCE</Text>
-      <Text style={styles.amount}>₹ {props.balance}</Text>
+      <AgencyText styles={styles.text} weight="bold">BALANCE</AgencyText>
+      <AgencyText styles={styles.amount} weight="bold">₹ {props.balance}</AgencyText>
     </View>
   );
 }
@@ -21,8 +23,7 @@ const styles = StyleSheet.create({
     },
     amount:{
         fontSize: 40,
-        color:'white',
         marginVertical:10,
-        fontWeight:'bold',
+        color:"white"
     }
 })

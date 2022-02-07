@@ -12,6 +12,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 
 import LottieView from 'lottie-react-native';
 
+import AgencyText from '../AgencyText';
 
 export default function Info() {
   return (
@@ -92,7 +93,7 @@ function Options(){
                     }}
                 >
                     {option.icon}
-                    <Text style={{fontWeight:'bold'}}>{option.name}</Text>
+                    <Text style={{fontWeight:'bold',color:'black'}}>{option.name}</Text>
                 </TouchableOpacity>
             ))}
         </View>

@@ -1,6 +1,8 @@
 import { View, Text, StyleSheet,Image } from 'react-native';
 import React from 'react';
 
+import AgencyText from '../AgencyText';
+
 export default function Card(props) {
   return (
     <View style={styles.container}>
@@ -11,11 +13,14 @@ export default function Card(props) {
                 height:"80%",
             }}
         >
-            <Text style={{
-                fontSize: 30,
-                textAlign:'center',
-                // fontWeight:"bold",
-            }}>{props.cardNo}</Text>
+            <AgencyText 
+                styles={{
+                    fontSize: 35,
+                    textAlign:'center',
+                    color:"black"
+                }}
+                weight="bold"
+            >{props.cardNo}</AgencyText>
             <View
                 style={{
                     flexDirection: 'row',
