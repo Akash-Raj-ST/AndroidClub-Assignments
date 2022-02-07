@@ -42,7 +42,7 @@ function Options(){
         setTimeout(()=>{
             setLoading(false);
             navigation.navigate(page);
-        },5000)
+        },3000)
     }
 
     const options = [
@@ -59,6 +59,9 @@ function Options(){
             icon:<AntDesign name="creditcard" size={30} />,
         }
     ]
+
+    if(loading) return <Loading/>
+
     return(
         <View
             style={{
@@ -73,7 +76,6 @@ function Options(){
                 borderColor:'#eee',            
             }}
         >
-            {loading && <Loading/>}
 
             {options.map((option,index)=>(
                 <TouchableOpacity
@@ -102,7 +104,7 @@ function Loading(){
         <View>
             <Modal
                 animationType="slide"
-                transparent={true}
+                transparent={false}
                 visible={true}
             >
                <LottieView source={require("../../assets/animation/loading.json")} autoPlay loop/> 

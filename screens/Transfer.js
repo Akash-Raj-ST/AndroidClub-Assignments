@@ -7,6 +7,7 @@ export default function Transfer() {
       style={{
         justifyContent:'center',
         alignItems:'center',
+        height:"100%",
       }}
     >
       <Text>Tranfer page</Text>

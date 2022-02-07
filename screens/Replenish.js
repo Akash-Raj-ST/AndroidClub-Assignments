@@ -7,6 +7,7 @@ export default function Replenish() {
       style={{
         justifyContent:'center',
         alignItems:'center',
+        height:"100%",
       }}
     >
       <Text>Replenish Page</Text>

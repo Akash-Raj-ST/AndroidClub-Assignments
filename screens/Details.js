@@ -7,6 +7,7 @@ export default function Details() {
       style={{
         justifyContent:'center',
         alignItems:'center',
+        height:"100%",
       }}
     >
       <Text>Details Page</Text>
