@@ -33,6 +33,30 @@ export default function Transactions() {
             bank:"Indian Bank",
             amount:-3200,
         },
+        {   id:5,
+            logo:require("../../assets/images/bank.png"),
+            name:"Macy's",
+            bank:"Supermarktes",
+            amount:-123.21,
+        },
+        {   id:6,
+            logo:require("../../assets/images/bank.png"),
+            name:"Shawn Kim",
+            bank:"Chase Bank",
+            amount:1250,
+        },
+        {   id:7,
+            logo:require("../../assets/images/bank.png"),
+            name:"Oscar Machiavelli",
+            bank:"Bank of America",
+            amount:-2300,
+        },
+        {   id:8,
+            logo:require("../../assets/images/bank.png"),
+            name:"Akash Raj",
+            bank:"Indian Bank",
+            amount:-3200,
+        },
     ]
 
     data.forEach((d)=>{
@@ -43,6 +67,8 @@ export default function Transactions() {
         <View
             style={{
                 marginVertical:10,
+                flex:0.7,
+                paddingBottom:25
             }}
         >
             <Header total={sum}/>
@@ -75,55 +101,61 @@ function Header(props){
 
 
 function Item(props){
+
     return(
-        <View
-            style={{
-                flexDirection:'row',
-                alignItems:'center',
-                width:"100%",
-                paddingHorizontal:20                
-            }}
-        >
+        <View>
+        
             <View
                 style={{
                     flexDirection:'row',
                     alignItems:'center',
-                    width:"75%"
+                    width:"100%",
+                    paddingHorizontal:20                
                 }}
             >
-            
-                <Image 
-                    source={props.data.logo}
+                <View
                     style={{
-                        width:50,
-                        height:50,
-                        marginRight:10,
+                        flexDirection:'row',
+                        alignItems:'center',
+                        width:"75%"
                     }}
-                />
+                >
+                
+                    <Image 
+                        source={props.data.logo}
+                        style={{
+                            width:50,
+                            height:50,
+                            marginRight:10,
+                        }}
+                    />
 
-                <View>
-                    <Text
-                        style={{
-                            fontWeight:'bold',
-                            fontSize:17,
-                            paddingVertical:2,
-                        }}
-                    >{props.data.name}</Text>
-                    <Text
-                        style={{
-                            color:'grey',
-                            fontSize:12
-                        }}
-                    >{props.data.bank}</Text>
+                    <View>
+                        <Text
+                            style={{
+                                fontWeight:'bold',
+                                fontSize:17,
+                                paddingVertical:2,
+                            }}
+                        >{props.data.name}</Text>
+                        <Text
+                            style={{
+                                color:'grey',
+                                fontSize:12
+                            }}
+                        >{props.data.bank}</Text>
+                    </View>
                 </View>
-            </View>
 
-            <AgencyText
-                styles={{
-                    fontSize:17,
-                }}
-                weight='bold'
-            >{props.data.amount>0?"+":"-"} ₹ {props.data.amount>0?props.data.amount:props.data.amount*-1}</AgencyText>
+                <AgencyText
+                    styles={{
+                        fontSize:17,
+                        color:props.data.amount>0?"#A1AC6D":"black",
+                    }}
+                    weight='bold'
+                >{props.data.amount>0?"+":"-"} ₹ {props.data.amount>0?props.data.amount:props.data.amount*-1}</AgencyText>
+            </View>
+            <Divider style={{marginHorizontal:10}} color="#eee"/>
         </View>
     )
 }
@@ -137,7 +169,7 @@ function TransactionsData(props){
                 keyExtractor={(item)=>item.id}
                 
                 style={{
-                    height:"65%",
+                    // height:"65%",
                 }}
             />
         </View>

@@ -4,6 +4,7 @@ import React, { useState, createContext} from 'react';
 import Balance from '../components/Home/Balance';
 import Card from '../components/Home/Card';
 import Info from '../components/Home/Info';
+import BottomTabs from '../components/BottomTabs'
 
 // import LottieView from 'lottie-react-native';
 
@@ -13,8 +14,9 @@ export default function Home() {
     
       <SafeAreaView style={styles.container}>
         <Balance balance="1,235.15"/>
-        <Card cardNo="1234  5678  9012  3456" expiry="12/20" logo=""/>
+        <Card cardNo="1234  5678  9012  3456" expiry="12 / 20" logo=""/>
         <Info/>
+        <BottomTabs/>
       </SafeAreaView>
 
   );

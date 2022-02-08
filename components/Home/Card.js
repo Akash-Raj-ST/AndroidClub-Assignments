@@ -19,7 +19,7 @@ export default function Card(props) {
                     textAlign:'center',
                     color:"black"
                 }}
-                weight="bold"
+                // weight="bold"
             >{props.cardNo}</AgencyText>
             <View
                 style={{
@@ -30,7 +30,7 @@ export default function Card(props) {
                     marginVertical:10,
                 }}
             >
-                <Text style={{fontSize:20,}}>{props.expiry}</Text>
+                <AgencyText styles={{fontSize:20,}}>{props.expiry}</AgencyText>
                 <Image source={require('../../assets/images/mastercard.png')} />
             </View>
         </View>

@@ -28,7 +28,6 @@ export default function Info() {
     >
         <Options />
         <Transactions/>
-        <BottomTabs/>
     </View>
   );
 }
@@ -74,7 +73,8 @@ function Options(){
                 borderWidth:2,
                 borderRadius:10,
                 marginVertical:10,
-                borderColor:'#eee',            
+                borderColor:'#eee', 
+                flex:0.3           
             }}
         >
 

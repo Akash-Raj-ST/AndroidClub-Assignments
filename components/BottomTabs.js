@@ -32,28 +32,34 @@ export default function BottomTabs() {
     ]
 
     return (
-        <View
+       <View
             style={{
-                flexDirection:'row',
-                justifyContent:'space-around',
-                borderTopLeftRadius:15,
-                borderTopRightRadius:15,
-                backgroundColor:'black',
-                marginTop:'auto',
+                backgroundColor:"white"
             }}
-        >
-            {tabs.map((tab,index)=>(
-                <TouchableOpacity
-                    key={index}
-                    onPress={()=>{setActiveTab(tab.name)}}
-                    style={{
-                        margin:10
-                    }}
-                >
-                    {tab.name==activeTab?tab.selectedIcon:tab.icon}
-                </TouchableOpacity>
-            ))}
-        </View>
+       >
+       
+            <View
+                style={{
+                    flexDirection:'row',
+                    justifyContent:'space-around',
+                    borderTopLeftRadius:15,
+                    borderTopRightRadius:15,
+                    backgroundColor:'black',
+                }}
+            >
+                {tabs.map((tab,index)=>(
+                    <TouchableOpacity
+                        key={index}
+                        onPress={()=>{setActiveTab(tab.name)}}
+                        style={{
+                            margin:10
+                        }}
+                    >
+                        {tab.name==activeTab?tab.selectedIcon:tab.icon}
+                    </TouchableOpacity>
+                ))}
+            </View>
+       </View>
     );
 }
 
