@@ -10,6 +10,10 @@
 
 ### <u> Video </u>
 
+
+https://user-images.githubusercontent.com/65654411/153032621-75be8ca9-85f4-47b8-b3a3-fd2ee44faa6a.mp4
+
+
 ### <u> Screenshot </u>
 
 <img src="./assets/images/ss.jpeg" width=300/>
