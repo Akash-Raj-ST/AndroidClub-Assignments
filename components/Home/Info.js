@@ -1,6 +1,7 @@
 import React,{useContext, useState} from 'react';
 import { View, Text, TouchableOpacity, Modal } from 'react-native';
 
+
 import { useNavigation } from '@react-navigation/native'
 
 import BottomTabs from '../BottomTabs';
@@ -13,12 +14,15 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import LottieView from 'lottie-react-native';
 
 import AgencyText from '../AgencyText';
+import {ThemeContext} from '../../Context';
+
 
 export default function Info() {
+    const Theme = useContext(ThemeContext);
   return (
     <View
         style={{
-            backgroundColor:'white',
+            backgroundColor:Theme.background,
             borderTopLeftRadius:20,
             borderTopRightRadius:20,
             flex:1,
@@ -26,13 +30,13 @@ export default function Info() {
             justifyContent:'space-between',
         }}
     >
-        <Options />
+        <Options Theme={Theme}/>
         <Transactions/>
     </View>
   );
 }
 
-function Options(){
+function Options({Theme}){
     const navigation = useNavigation();
 
     const [loading,setLoading]  =useState(false);
@@ -93,7 +97,7 @@ function Options(){
                     }}
                 >
                     {option.icon}
-                    <Text style={{fontWeight:'bold',color:'black'}}>{option.name}</Text>
+                    <Text style={{fontWeight:'bold',color:Theme.text}}>{option.name}</Text>
                 </TouchableOpacity>
             ))}
         </View>

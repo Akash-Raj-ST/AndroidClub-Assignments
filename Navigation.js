@@ -1,11 +1,13 @@
 import { NavigationContainer,DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
+import React from "react";
 
 import Home from './screens/Home';
 import Replenish from "./screens/Replenish";
 import Transfer from "./screens/Transfer";
 import Details from "./screens/Details";
+
+import ThemeContextApi from "./Context";
 
 
 const MyTheme = {
@@ -14,12 +16,16 @@ const MyTheme = {
       ...DefaultTheme.colors,
       background: '#FFF',
     },
-  };
+};
+
+
 
 const Stack = createNativeStackNavigator()
 
 export default function Navigation(){
+
     return(
+        <ThemeContextApi>
         <NavigationContainer
             theme={MyTheme}
         >
@@ -36,5 +42,7 @@ export default function Navigation(){
 
             </Stack.Navigator>
         </NavigationContainer>
+        </ThemeContextApi>
+
     )
 }
