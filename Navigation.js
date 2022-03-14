@@ -2,10 +2,12 @@ import { NavigationContainer,DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 
-import Home from './screens/Home';
+import Home from './Screens/Home';
 import Feed from "./Screens/Feed";
 import Profile from "./Screens/Profile";
 
+import TabNavigation from "./TabNavigation";
+import DrawerNavigation from "./DrawerNavigation"
 
 const MyTheme = {
     ...DefaultTheme,
@@ -22,22 +24,17 @@ const Stack = createNativeStackNavigator()
 export default function Navigation(){
 
     return(
-        <ThemeContextApi>
         <NavigationContainer
             theme={MyTheme}
         >
             <Stack.Navigator 
                 initialRouteName="Home"  
-                screenOptions={{
-                    headerShown: false
-                }}
             >
                 <Stack.Screen name="Home" component={Home}/>
-                <Stack.Screen name="Feed" component={Feed}/>
-                <Stack.Screen name="Profile" component={Profile}/>
+                <Stack.Screen name="Feed" component={DrawerNavigation}/>
+                <Stack.Screen name="Profile" component={TabNavigation}/>
             </Stack.Navigator>
         </NavigationContainer>
-        </ThemeContextApi>
 
     )
 }
