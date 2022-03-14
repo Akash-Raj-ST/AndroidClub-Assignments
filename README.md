@@ -1,15 +1,3 @@
-
-
-
-
-### <u> Using Context API </u>
-
-<ul>
-    <li>Change Theme based on device theme</li>
-    <li>Used createContext and useContext hooks</li>
-</ul>
-
-
 ### <u> Screenshot </u>
 
 ### 1. Stack Navigator
